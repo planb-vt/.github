@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 작업 보드 (칸반)
+    url: https://github.com/orgs/planb-vt/projects/1
+    about: 지금 무엇이 진행 중인지 보려면 여기.

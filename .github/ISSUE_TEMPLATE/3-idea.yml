@@ -1,0 +1,45 @@
+name: 아이디어
+description: 당장 하지는 않지만 남겨 둘 생각·피드백·요청.
+title: "[아이디어] "
+labels: ["gap"]
+projects: ["planb-vt/1"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        생각나는 대로 적어 두는 칸입니다. 다듬는 것은 나중에 해도 됩니다.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 하고 싶은 것
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: 왜 (어떤 불편이 있었나)
+      description: 어떤 상황에서 아쉬웠는지 적어 주시면 판단이 쉬워집니다.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 어느 쪽인가
+      options:
+        - 비교 대상 제품에는 있는데 우리에겐 없는 것
+        - 우리 기술 기반이라서 가능한 우위
+        - 불편해서 고쳤으면 하는 것
+        - 아직 모르겠음
+      default: 3
+    validations:
+      required: true
+
+  - type: textarea
+    id: refs
+    attributes:
+      label: 참고 (화면·영상·링크)
+    validations:
+      required: false

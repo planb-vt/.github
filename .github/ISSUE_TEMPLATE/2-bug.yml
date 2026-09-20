@@ -1,0 +1,96 @@
+name: 버그
+description: 되던 것이 안 되거나, 있어야 할 것이 없거나, 잘못된 결과가 나올 때.
+title: "[버그] "
+labels: ["bug"]
+projects: ["planb-vt/1"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **등록만 하고 고치지 않습니다.** 우선순위를 정해 착수를 지시합니다.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 무엇이 잘못되나 (한 문장)
+      placeholder: 예) 설정을 바꾸고 다시 켜면 이전 값으로 되돌아간다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 절차
+      description: 다른 사람이 그대로 따라 할 수 있게 번호로 적어 주세요.
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-actual
+    attributes:
+      label: 기대한 결과 / 실제 결과
+      value: |
+        **기대**: 
+        **실제**: 
+    validations:
+      required: true
+
+  - type: input
+    id: build
+    attributes:
+      label: 어느 빌드에서
+      description: |
+        설정 화면이나 각 프로그램 시작 로그 첫 줄에 빌드 번호가 나옵니다 (`main-20260920-6c5f92e` 형식).
+        모르면 `모름` 이라고 적어 주세요.
+      placeholder: "예) main-20260920-6c5f92e / v1.0 / 모름"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 증거 (로그·화면·영상)
+      description: |
+        화면 파일은 이 칸에 그대로 끌어다 놓으면 올라갑니다.
+        **움직임이 관련된 문제는 GIF 나 영상으로 남겨 주세요** — 정지 화면으로는 판정이 안 됩니다.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: owner
+    attributes:
+      label: 담당
+      options:
+        - 미정
+        - TD — 플랫폼·배포
+        - TA — 아트·룩
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: env
+    attributes:
+      label: 실행 환경
+      description: 재현에 엔진 빌드·배포판·카메라 입력이 필요하면 `로컬 PC 필요` 입니다.
+      options:
+        - 어디서나 가능
+        - 로컬 PC 필요
+      default: 1
+    validations:
+      required: true
+
+  - type: textarea
+    id: external-data
+    attributes:
+      label: 저장소 밖 데이터 의존
+      description: |
+        저장소에 없는 특정 파일이 있어야 재현되나요?
+        그렇다면 **견본을 저장소에 같이 넣거나 받아오는 방법을 적어** 주세요. 없으면 다른 컴퓨터에서 재현이 안 돼 고칠 수 없습니다.
+      value: 없음
+    validations:
+      required: true
